@@ -1,4 +1,17 @@
+import React from "react"
+
+
+import { useNavigate, useSearchParams } from "react-router-dom"
+
 const Search = () => {
+    const[searchParams] = useSearchParams()
+    const queryParam = searchParams.get('q')
+    const [query, setQuery] = useState(searchParams.get('q') || "")
+    
+    const handleSearch = (e) => {
+        e.preventDefault()
+        // navigate('search' + '?q=' +encodeURIComponent(query))
+    }
     return (
         <section className="content">
             <div className="search-page-header">
@@ -7,6 +20,8 @@ const Search = () => {
                 <form className="search" id="searchForm">
                     <span className="search-icon">⌕</span>
                     <input
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
                         id="searchInput"
                         type="text"
                         placeholder="Название, автор или ISBN..."
