@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 const Book = () => {
+    const {id} = useParams()
+    // Где хранить книжку
+    
+    // Обработать состояние загружки, ошибки и результата
+    useEffect(() => {
+        // Написать запрос
+    }, [])
+
+    if (isLoading) return <Loader label="Загружаем книжку"/>
+
     return (
         <section className="book-page">
             <div className="book-page-cover">
@@ -10,12 +22,12 @@ const Book = () => {
             </div>
             <div className="book-page-content">
                 <div className="section-label">КНИГА</div>
-                <h1 id="bookTitle">The Little Prince</h1>
+                <h1 id="bookTitle"></h1>
                 <div className="book-page-author" id="bookAuthor">
                     Antoine de Saint-Exupéry
                 </div>
                 <div className="book-meta">
-                    <span id="bookYear">1943</span>
+                    <span id="bookYear"></span>
                     <span>Fiction</span>
                 </div>
                 <div className="description">

@@ -1,4 +1,5 @@
-import navlink
+import { Link, NavLink } from "react-router-dom"
+
 const Sidebar = () => {
     return (
         <aside className="sidebar">
@@ -11,11 +12,11 @@ const Sidebar = () => {
             </div>
             <nav className="navigation">
                 <div className="nav-section-title">Библиотека</div>
-                <NavLink className={({isActive}) => `nav-items${isActive ? "active" : ""}`} to="/">
+                <NavLink className={({isActive}) => `nav-item${isActive ? " active" : ""}`} to="/">
                     <span>⌂</span>
                     Обзор
                 </NavLink>
-                <NavLink className={({isActive}) => `nav-items${isActive ? "active" : ""}`} to="/">
+                <NavLink className={({isActive}) => `nav-item${isActive ? " active" : ""}`} to="favorites">
                     <span>♡</span>
                     Избранное
                 </NavLink>
